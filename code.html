@@ -310,8 +310,10 @@
         @media (min-width: 768px) {
             .timeline-pin {
                 position: relative;
-                /* 1× viewport sticky + 1× viewport of scrub room */
-                min-height: 200vh;
+                /* Sticky display (100vh) + a short scrub band (20vh). Larger values leave a
+                   blank wrap area after the sticky releases, since centered milestone content
+                   doesn't fill the inner. */
+                min-height: 120vh;
             }
             .timeline-sticky {
                 position: sticky; top: 0;
@@ -355,9 +357,14 @@
         /* ============================================================
            SECTION 9 · ADVISORY — image clip + text lines
            ============================================================ */
+        /* One-shot CSS reveal so the image is guaranteed visible even if the IO never fires
+           (script error, timing). .in still wins if IO does fire faster. */
         .advisory-img {
             clip-path: inset(0 0 100% 0);
-            transition: clip-path 1.2s cubic-bezier(0.85,0,0.15,1);
+            animation: advisory-img-reveal 1.4s cubic-bezier(0.85,0,0.15,1) 0.5s forwards;
+        }
+        @keyframes advisory-img-reveal {
+            to { clip-path: inset(0 0 0 0); }
         }
         .advisory-img.in { clip-path: inset(0 0 0 0); }
         [data-advisory-text] {
