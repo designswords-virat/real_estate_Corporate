@@ -530,23 +530,26 @@
 </div>
 </div>
 <!-- Search Bar -->
-<form class="hero-search relative md:absolute mt-10 md:mt-0 md:bottom-12 md:left-1/2 md:-translate-x-1/2 w-full max-w-4xl px-margin-mobile md:px-0 z-20" onsubmit="event.preventDefault();">
+<form class="hero-search relative md:absolute mt-10 md:mt-0 md:bottom-12 md:left-1/2 md:-translate-x-1/2 w-full max-w-5xl px-margin-mobile md:px-margin-mobile z-20" onsubmit="event.preventDefault();">
 <div class="bg-white/10 glass-panel border border-white/20 p-4 flex flex-col md:flex-row gap-4 shadow-2xl rounded-lg">
-<div class="flex-1 flex items-center gap-3 px-4 py-2 border-b md:border-b-0 md:border-r border-white/20">
-<span class="material-symbols-outlined text-white/70" aria-hidden="true">location_on</span>
+<div class="flex-1 min-w-0 flex items-center gap-3 px-4 py-2 border-b md:border-b-0 md:border-r border-white/20">
+<span class="material-symbols-outlined text-white/70 shrink-0" aria-hidden="true">location_on</span>
 <label for="search-location" class="sr-only">Global location</label>
-<input id="search-location" name="location" class="bg-transparent border-none focus:ring-0 text-white placeholder:text-white/50 w-full font-body-md" placeholder="Global Location" type="text"/>
+<input id="search-location" name="location" class="bg-transparent border-none focus:ring-0 text-white placeholder:text-white/50 w-full min-w-0 font-body-md" placeholder="Global Location" type="text"/>
 </div>
-<div class="flex-1 flex items-center gap-3 px-4 py-2 border-b md:border-b-0 md:border-r border-white/20">
-<span class="material-symbols-outlined text-white/70" aria-hidden="true">apartment</span>
+<div class="flex-1 min-w-0 flex items-center gap-3 px-4 py-2 border-b md:border-b-0 md:border-r border-white/20">
+<span class="material-symbols-outlined text-white/70 shrink-0" aria-hidden="true">apartment</span>
 <label for="search-type" class="sr-only">Property type</label>
-<select id="search-type" name="type" class="bg-transparent border-none focus:ring-0 text-white w-full font-body-md appearance-none">
+<select id="search-type" name="type" class="bg-transparent border-none focus:ring-0 text-white w-full min-w-0 font-body-md appearance-none">
 <option class="text-primary">Commercial Space</option>
 <option class="text-primary">Luxury Residential</option>
 <option class="text-primary">Infrastructure</option>
 </select>
 </div>
-<button type="submit" class="magnetic-btn bg-secondary text-white px-8 py-3 font-button text-button hover:bg-secondary-container transition-colors shrink-0">SEARCH PROPERTIES</button>
+<button type="submit" class="magnetic-btn bg-secondary text-white px-6 py-3 md:px-8 md:py-4 font-button text-button hover:bg-secondary-container transition-colors shrink-0 flex items-center justify-center gap-2 whitespace-nowrap rounded">
+<span class="material-symbols-outlined" aria-hidden="true">search</span>
+<span>SEARCH PROPERTIES</span>
+</button>
 </div>
 </form>
 </section>
