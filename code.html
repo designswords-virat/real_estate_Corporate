@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="description" content="Archi-Corp — enterprise architectural solutions and institutional real estate. Shaping the future of global infrastructure through visionary design and engineering precision."/>
+<meta name="theme-color" content="#fcf9f8"/>
+<title>Archi-Corp | Shaping Global Infrastructure</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23fcf9f8'/%3E%3Ctext x='50%25' y='70%25' text-anchor='middle' font-family='Inter,sans-serif' font-weight='700' font-size='20' fill='%23000'%3EA%3C/text%3E%3C/svg%3E"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary": "#ffffff",
+                    "surface-container-highest": "#e5e2e1",
+                    "tertiary-fixed-dim": "#bbc8d9",
+                    "background": "#fcf9f8",
+                    "on-tertiary-fixed-variant": "#3c4856",
+                    "on-surface-variant": "#44474c",
+                    "error": "#ba1a1a",
+                    "surface-bright": "#fcf9f8",
+                    "surface-variant": "#e5e2e1",
+                    "secondary-fixed": "#d8e2ff",
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#d6e4f9",
+                    "on-tertiary-container": "#798595",
+                    "tertiary": "#000000",
+                    "secondary-fixed-dim": "#adc6ff",
+                    "on-background": "#1c1b1b",
+                    "primary-container": "#0f1c2c",
+                    "on-primary-container": "#778598",
+                    "secondary-container": "#1470e8",
+                    "on-error-container": "#93000a",
+                    "inverse-surface": "#313030",
+                    "on-secondary-fixed": "#001a41",
+                    "surface-container": "#f0edec",
+                    "primary-fixed-dim": "#bac8dc",
+                    "on-surface": "#1c1b1b",
+                    "tertiary-container": "#101c29",
+                    "surface": "#fcf9f8",
+                    "on-tertiary-fixed": "#101c29",
+                    "on-secondary-container": "#fefcff",
+                    "on-primary": "#ffffff",
+                    "surface-tint": "#525f71",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#f3f0ef",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-low": "#f6f3f2",
+                    "on-primary-fixed-variant": "#3a4859",
+                    "primary": "#000000",
+                    "outline": "#74777d",
+                    "secondary": "#0058bd",
+                    "outline-variant": "#c4c6cc",
+                    "surface-container-high": "#ebe7e7",
+                    "surface-dim": "#dcd9d9",
+                    "on-primary-fixed": "#0f1c2c",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed-variant": "#004494",
+                    "inverse-primary": "#bac8dc",
+                    "tertiary-fixed": "#d7e4f5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "section-gap": "128px",
+                    "unit": "8px",
+                    "container-max": "1440px",
+                    "margin-tablet": "32px",
+                    "margin-desktop": "64px",
+                    "gutter": "32px",
+                    "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                    "display-xl": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "display-xl-mobile": ["Inter"],
+                    "button": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "headline-lg-mobile": ["Inter"]
+            },
+            "fontSize": {
+                    "display-xl": ["80px", {"lineHeight": "88px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "display-xl-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "button": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        :focus-visible { outline: 2px solid #0058bd; outline-offset: 4px; }
+        .sr-only {
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+            overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        .scale-hover { transition: transform 0.5s cubic-bezier(0.2, 0, 0, 1); }
+        .scale-hover:hover { transform: scale(1.02); }
+
+        /* ============================================================
+           PAGE-LEVEL · Lenis smooth scroll resets
+           ============================================================ */
+        html.lenis, html.lenis body { height: auto; }
+        html.lenis.lenis-smooth { scroll-behavior: auto !important; }
+        html.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+        html.lenis.lenis-stopped { overflow: clip; }
+        html.lenis.lenis-scrolling iframe { pointer-events: none; }
+
+        /* ============================================================
+           PAGE-LEVEL · Custom cursor (mix-blend-difference for light theme)
+           ============================================================ */
+        .cursor-dot, .cursor-ring {
+            position: fixed; top: 0; left: 0;
+            pointer-events: none; z-index: 250;
+            mix-blend-mode: difference;
+            will-change: transform;
+        }
+        .cursor-dot {
+            width: 5px; height: 5px; border-radius: 50%;
+            background: #fff;
+            transform: translate(-50%, -50%);
+        }
+        .cursor-ring {
+            width: 28px; height: 28px; border-radius: 50%;
+            border: 1px solid #fff;
+            transform: translate(-50%, -50%) scale(1);
+            transition: transform 0.35s cubic-bezier(0.22,1,0.36,1),
+                        width 0.35s cubic-bezier(0.22,1,0.36,1),
+                        height 0.35s cubic-bezier(0.22,1,0.36,1),
+                        background 0.3s ease;
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Inter', sans-serif;
+            font-size: 9px; font-weight: 600;
+            letter-spacing: 0.15em;
+            color: #fff;
+            text-transform: uppercase;
+        }
+        body.cursor-hover .cursor-ring {
+            transform: translate(-50%, -50%) scale(1.7);
+            background: rgba(255,255,255,0.06);
+        }
+        body.cursor-label .cursor-ring {
+            width: 72px; height: 72px;
+        }
+        @media (hover: none), (pointer: coarse) {
+            .cursor-dot, .cursor-ring { display: none; }
+        }
+        .magnetic-btn { will-change: transform; }
+
+        /* ============================================================
+           SECTION 1 · NAV — letter stagger + scroll glass swap
+           ============================================================ */
+        .nav-letter {
+            display: inline-block; opacity: 0; transform: translateY(-8px);
+            animation: nav-letter-in 0.6s cubic-bezier(0.22,1,0.36,1) forwards;
+        }
+        @keyframes nav-letter-in { to { opacity: 1; transform: translateY(0); } }
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: ""; position: absolute; left: 0; right: 0; bottom: -4px;
+            height: 1px; background: currentColor;
+            transform: scaleX(0); transform-origin: left center;
+            transition: transform 0.5s cubic-bezier(0.22,1,0.36,1);
+        }
+        .nav-link:hover::after { transform: scaleX(1); }
+        #mobile-menu {
+            transform: translateY(-100%);
+            transition: transform 0.7s cubic-bezier(0.22,1,0.36,1);
+        }
+        #mobile-menu.open { transform: translateY(0); }
+
+        /* ============================================================
+           SECTION 2 · HERO — Ken Burns + masked headline rise + search slide
+           ============================================================ */
+        .hero-img-kb {
+            animation: ken-burns 22s ease-in-out infinite alternate;
+            will-change: transform;
+        }
+        @keyframes ken-burns {
+            0%   { transform: scale(1.05) translate(0, 0); }
+            100% { transform: scale(1.14) translate(-1%, 1%); }
+        }
+        .hero-line {
+            display: block; overflow: hidden;
+            padding-bottom: 0.1em;
+        }
+        .hero-line > span {
+            display: inline-block;
+            transform: translateY(110%);
+            animation: hero-rise 1.1s cubic-bezier(0.22,1,0.36,1) both;
+        }
+        .hero-line.delay-1 > span { animation-delay: 0.18s; }
+        .hero-line.delay-2 > span { animation-delay: 0.34s; }
+        .hero-line.delay-3 > span { animation-delay: 0.50s; }
+        @keyframes hero-rise { from { transform: translateY(110%); } to { transform: translateY(0); } }
+        .hero-fade { opacity: 0; animation: hero-fade-in 1.0s ease 0.9s forwards; }
+        @keyframes hero-fade-in { to { opacity: 1; } }
+        .hero-search { opacity: 0; transform: translateY(30px); animation: hero-search-up 1.0s cubic-bezier(0.22,1,0.36,1) 1.25s forwards; }
+        @keyframes hero-search-up { to { opacity: 1; transform: translateY(0); } }
+
+        /* ============================================================
+           SECTION 3 · FEATURED PROJECTS — image clip-path wipe + text rise
+           ============================================================ */
+        .project-row { opacity: 0; transition: opacity 0.7s ease; }
+        .project-row.in { opacity: 1; }
+        .project-img-wrap { overflow: hidden; }
+        .project-img-wrap img {
+            clip-path: inset(0 100% 0 0);
+            transition: clip-path 1.2s cubic-bezier(0.85,0,0.15,1) 0.15s,
+                        transform 1.4s cubic-bezier(0.22,1,0.36,1);
+        }
+        .project-row.from-right .project-img-wrap img { clip-path: inset(0 0 0 100%); }
+        .project-row.in .project-img-wrap img { clip-path: inset(0 0 0 0); }
+        .project-row:hover .project-img-wrap img { transform: scale(1.04); }
+        .project-text > * {
+            opacity: 0; transform: translateY(20px);
+            transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22,1,0.36,1);
+        }
+        .project-row.in .project-text > * { opacity: 1; transform: translateY(0); }
+        .project-row.in .project-text > *:nth-child(1) { transition-delay: 0.2s; }
+        .project-row.in .project-text > *:nth-child(2) { transition-delay: 0.3s; }
+        .project-row.in .project-text > *:nth-child(3) { transition-delay: 0.4s; }
+        .project-row.in .project-text > *:nth-child(4) { transition-delay: 0.5s; }
+
+        /* ============================================================
+           SECTION 4 · PORTFOLIO BENTO — tile fade-rise with stagger
+           ============================================================ */
+        .portfolio-tile {
+            opacity: 0; transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1);
+        }
+        .portfolio-tile.in { opacity: 1; transform: translateY(0); }
+
+        /* ============================================================
+           SECTION 5 · SERVICES — 3D rotateY flip-in
+           ============================================================ */
+        .service-card {
+            opacity: 0;
+            transform: perspective(900px) rotateY(-18deg) translateZ(-30px);
+            transform-origin: left center;
+            transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.22,1,0.36,1);
+        }
+        .service-card.in {
+            opacity: 1;
+            transform: perspective(900px) rotateY(0) translateZ(0);
+        }
+        .service-card .service-icon {
+            transition: transform 0.6s cubic-bezier(0.22,1,0.36,1);
+            display: inline-block;
+        }
+        .service-card:hover .service-icon { transform: rotate(8deg) scale(1.1); }
+
+        /* ============================================================
+           SECTION 6 · STATS — count-up + underline draw
+           ============================================================ */
+        .stat-block { position: relative; padding-bottom: 1rem; }
+        .stat-block::after {
+            content: ""; position: absolute; left: 50%; bottom: 0;
+            width: 0; height: 2px;
+            background: #0058bd;
+            transform: translateX(-50%);
+            transition: width 1.0s cubic-bezier(0.22,1,0.36,1) 0.3s;
+        }
+        .stat-block.in::after { width: 60px; }
+        .stat-number {
+            opacity: 0; transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1);
+        }
+        .stat-block.in .stat-number { opacity: 1; transform: translateY(0); }
+
+        /* ============================================================
+           SECTION 7 · ALLIANCES — grayscale-to-color sweep
+           ============================================================ */
+        .alliances-strip {
+            opacity: 0; transform: translateY(20px);
+            transition: opacity 1.0s ease, transform 1.0s cubic-bezier(0.22,1,0.36,1);
+        }
+        .alliances-strip.in { opacity: 0.6; transform: translateY(0); }
+        .alliances-strip:hover { opacity: 1 !important; }
+
+        /* ============================================================
+           SECTION 8 (anchor) · TIMELINE — pinned scroll-scrub
+           — vertical line grows, markers activate sequentially,
+             ghost year watermarks crossfade to full opacity
+           ============================================================ */
+        @media (min-width: 768px) {
+            .timeline-pin {
+                position: relative;
+                /* 1× viewport sticky + 1× viewport of scrub room */
+                min-height: 200vh;
+            }
+            .timeline-sticky {
+                position: sticky; top: 0;
+                height: 100vh;
+                display: flex; align-items: center;
+            }
+            .timeline-line-fill {
+                position: absolute; left: 50%; top: 0;
+                width: 1px; height: 0;
+                background: #0058bd;
+                transform: translateX(-50%);
+                will-change: height;
+                z-index: 1;
+            }
+        }
+        .timeline-line-fill { display: none; }
+        @media (min-width: 768px) { .timeline-line-fill { display: block; } }
+        .milestone {
+            transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22,1,0.36,1);
+            opacity: 0.25;
+            transform: translateY(20px);
+        }
+        .milestone.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .milestone-dot {
+            transition: background 0.5s ease, color 0.5s ease, transform 0.5s cubic-bezier(0.34,1.56,0.64,1);
+        }
+        .milestone.active .milestone-dot {
+            background: #0058bd;
+            color: #fff;
+            border-color: #0058bd;
+            transform: scale(1.1);
+        }
+        .milestone-year {
+            transition: color 0.6s ease, opacity 0.6s ease;
+        }
+        .milestone.active .milestone-year { color: rgba(0,88,189,0.10); }
+
+        /* ============================================================
+           SECTION 9 · ADVISORY — image clip + text lines
+           ============================================================ */
+        .advisory-img {
+            clip-path: inset(0 0 100% 0);
+            transition: clip-path 1.2s cubic-bezier(0.85,0,0.15,1);
+        }
+        .advisory-img.in { clip-path: inset(0 0 0 0); }
+        [data-advisory-text] {
+            opacity: 0; transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1);
+        }
+        [data-advisory-text].in { opacity: 1; transform: translateY(0); }
+        [data-advisory-text].in:nth-of-type(2) { transition-delay: 0.1s; }
+        [data-advisory-text].in:nth-of-type(3) { transition-delay: 0.2s; }
+
+        /* ============================================================
+           SECTION 10 · LEADERSHIP — aperture/iris circular reveal
+           ============================================================ */
+        .leader { opacity: 0; transition: opacity 0.6s ease; }
+        .leader.in { opacity: 1; }
+        .leader-photo {
+            position: relative; overflow: hidden;
+        }
+        .leader-photo img {
+            clip-path: circle(0% at 50% 50%);
+            transform: scale(1.15);
+            transition: clip-path 1.2s cubic-bezier(0.22,1,0.36,1),
+                        transform 1.6s cubic-bezier(0.22,1,0.36,1),
+                        filter 0.7s ease;
+        }
+        .leader.in .leader-photo img {
+            clip-path: circle(75% at 50% 50%);
+            transform: scale(1);
+        }
+        .leader-meta {
+            opacity: 0; transform: translateY(10px);
+            transition: opacity 0.7s ease 0.7s, transform 0.7s cubic-bezier(0.22,1,0.36,1) 0.7s;
+        }
+        .leader.in .leader-meta { opacity: 1; transform: translateY(0); }
+
+        /* ============================================================
+           SECTION 11 · SUSTAINABILITY — parallax bg + masked headline
+           ============================================================ */
+        .sustain-headline {
+            display: block; overflow: hidden;
+            padding-bottom: 0.06em;
+        }
+        .sustain-headline > span {
+            display: inline-block;
+            transform: translateY(105%);
+            transition: transform 1.1s cubic-bezier(0.22,1,0.36,1);
+        }
+        [data-sustain].in .sustain-headline > span { transform: translateY(0); }
+        [data-sustain-eyebrow], [data-sustain-body], [data-sustain-pillar] {
+            opacity: 0; transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1);
+        }
+        [data-sustain].in [data-sustain-eyebrow] { opacity: 1; transform: translateY(0); }
+        [data-sustain].in [data-sustain-body] { opacity: 1; transform: translateY(0); transition-delay: 0.2s; }
+        [data-sustain].in [data-sustain-pillar] { opacity: 1; transform: translateY(0); }
+        [data-sustain].in [data-sustain-pillar]:nth-of-type(1) { transition-delay: 0.4s; }
+        [data-sustain].in [data-sustain-pillar]:nth-of-type(2) { transition-delay: 0.55s; }
+        [data-sustain].in [data-sustain-pillar]:nth-of-type(3) { transition-delay: 0.7s; }
+
+        /* ============================================================
+           SECTION 12 · JOURNAL — clip-path image wipes (alternating direction)
+           ============================================================ */
+        .journal-card {
+            opacity: 0; transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1);
+        }
+        .journal-card.in { opacity: 1; transform: translateY(0); }
+        .journal-img-wrap { overflow: hidden; }
+        .journal-img {
+            transition: transform 1.4s cubic-bezier(0.22,1,0.36,1),
+                        clip-path 1.1s cubic-bezier(0.85,0,0.15,1) 0.15s;
+        }
+        .journal-card.from-left .journal-img { clip-path: inset(0 100% 0 0); }
+        .journal-card.from-top   .journal-img { clip-path: inset(100% 0 0 0); }
+        .journal-card.from-right .journal-img { clip-path: inset(0 0 0 100%); }
+        .journal-card.in .journal-img { clip-path: inset(0 0 0 0); }
+        .journal-card:hover .journal-img { transform: scale(1.04); }
+
+        /* ============================================================
+           SECTION 13 · FOOTER — wave-rise of columns
+           ============================================================ */
+        .footer-col {
+            opacity: 0; transform: translateY(20px);
+            transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22,1,0.36,1);
+        }
+        .footer-col.in { opacity: 1; transform: translateY(0); }
+
+        /* ============================================================
+           Reduced motion
+           ============================================================ */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            .cursor-dot, .cursor-ring { display: none !important; }
+            .hero-img-kb { animation: none !important; transform: none !important; }
+            .project-img-wrap img,
+            .advisory-img,
+            .journal-img { clip-path: inset(0 0 0 0) !important; }
+            .leader-photo img { clip-path: circle(75% at 50% 50%) !important; transform: none !important; }
+            .timeline-pin { min-height: auto !important; }
+            .timeline-sticky { position: static !important; min-height: auto !important; }
+            .milestone { opacity: 1 !important; transform: none !important; }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary selection:text-white">
+<!-- Custom cursor -->
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 border-b border-outline-variant/20 shadow-sm bg-white/10 backdrop-blur-xl transition-all duration-500" id="main-nav">
+<nav class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex justify-between items-center h-20">
+<a href="#" id="nav-logo" class="font-display-xl text-headline-md tracking-tighter text-primary" aria-label="Archi-Corp home"></a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="nav-link font-button text-button uppercase tracking-widest text-secondary border-b-2 border-secondary pb-1" href="#portfolio" aria-current="page">Portfolio</a>
+<a class="nav-link font-button text-button uppercase tracking-widest text-on-surface hover:text-secondary transition-colors duration-300" href="#services">Services</a>
+<a class="nav-link font-button text-button uppercase tracking-widest text-on-surface hover:text-secondary transition-colors duration-300" href="#sustainability">Vision</a>
+<a class="nav-link font-button text-button uppercase tracking-widest text-on-surface hover:text-secondary transition-colors duration-300" href="#advisory">Investment</a>
+<a class="nav-link font-button text-button uppercase tracking-widest text-on-surface hover:text-secondary transition-colors duration-300" href="#journal">Journal</a>
+<a class="nav-link font-button text-button uppercase tracking-widest text-on-surface hover:text-secondary transition-colors duration-300" href="#footer">Contact</a>
+</div>
+<div class="flex items-center gap-4 md:gap-6">
+<button type="button" class="material-symbols-outlined text-on-surface hover:text-secondary transition-colors" aria-label="Search">search</button>
+<a href="#footer" class="magnetic-btn hidden md:inline-block bg-primary text-white font-button text-button px-6 py-3 transition-opacity duration-300 hover:opacity-85">INQUIRE NOW</a>
+<button type="button" id="menu-btn" class="md:hidden material-symbols-outlined text-on-surface text-3xl" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">menu</button>
+</div>
+</nav>
+</header>
+<!-- Mobile menu -->
+<div id="mobile-menu" class="fixed inset-0 z-40 bg-background pt-32 px-margin-mobile md:hidden" aria-hidden="true">
+<nav class="flex flex-col gap-6 font-headline-md text-headline-md">
+<a href="#portfolio" class="hover:text-secondary transition-colors">Portfolio</a>
+<a href="#services" class="hover:text-secondary transition-colors">Services</a>
+<a href="#sustainability" class="hover:text-secondary transition-colors">Vision</a>
+<a href="#advisory" class="hover:text-secondary transition-colors">Investment</a>
+<a href="#journal" class="hover:text-secondary transition-colors">Journal</a>
+<a href="#footer" class="hover:text-secondary transition-colors">Contact</a>
+</nav>
+<a href="#footer" class="mt-10 inline-block bg-primary text-white px-8 py-3 font-button text-button uppercase tracking-widest">Inquire Now</a>
+</div>
+<!-- Hero Section -->
+<section class="relative min-h-screen md:min-h-[680px] md:h-screen flex flex-col justify-end pt-32 pb-12 md:pt-0 md:pb-0 md:flex-row md:items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="A futuristic bird's-eye view of a metropolitan tech hub at golden hour with interconnected glass towers and elevated walkways" class="hero-img-kb w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQiGQo2fltDTZ-R4C8eeplujeX2RuzGqFyadWSjqL0lmwbphmuXE8WTcZzTKPFO3ouKVeWmzKLHMQeAa8tt2FX9nlMhQWDfwd_qACORB1X6vb3WgyAWlTYmFX6nXge5SvqNVjQlYMru97BBLtI1bTfurlEa_y7k-8JSdaR3KwgYcJSI-tQbJlyAgNCTgEqNpIZTTmIbnDWQY33qSH7BCyJ9ev1KxGmSU7GTo1Z5ty2rdEP4pmJlCgbe9sSecXaYIRhGg8UhEsWKiHN"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/55"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full md:pb-24">
+<div class="max-w-3xl">
+<h1 class="font-display-xl text-white leading-[1.05] tracking-tight text-[clamp(2.25rem,5.5vw,4.25rem)]">
+<span class="hero-line delay-1"><span>Shaping the Future</span></span>
+<span class="hero-line delay-2"><span>of Global Infrastructure.</span></span>
+</h1>
+<p class="hero-fade font-body-lg text-body-lg text-white/90 max-w-xl mt-6">Enterprise-level architectural solutions for the modern world. Engineering precision meets aesthetic vision.</p>
+<div class="hero-fade pt-8 flex flex-wrap gap-4">
+<a href="#portfolio" class="magnetic-btn bg-white text-primary px-8 py-4 font-button text-button hover:opacity-90 transition-opacity">EXPLORE PROJECTS</a>
+<a href="#sustainability" class="border border-white text-white px-8 py-4 font-button text-button glass-panel hover:bg-white/10 transition-colors">OUR VISION</a>
+</div>
+</div>
+</div>
+<!-- Search Bar -->
+<form class="hero-search relative md:absolute mt-10 md:mt-0 md:bottom-12 md:left-1/2 md:-translate-x-1/2 w-full max-w-4xl px-margin-mobile md:px-0 z-20" onsubmit="event.preventDefault();">
+<div class="bg-white/10 glass-panel border border-white/20 p-4 flex flex-col md:flex-row gap-4 shadow-2xl rounded-lg">
+<div class="flex-1 flex items-center gap-3 px-4 py-2 border-b md:border-b-0 md:border-r border-white/20">
+<span class="material-symbols-outlined text-white/70" aria-hidden="true">location_on</span>
+<label for="search-location" class="sr-only">Global location</label>
+<input id="search-location" name="location" class="bg-transparent border-none focus:ring-0 text-white placeholder:text-white/50 w-full font-body-md" placeholder="Global Location" type="text"/>
+</div>
+<div class="flex-1 flex items-center gap-3 px-4 py-2 border-b md:border-b-0 md:border-r border-white/20">
+<span class="material-symbols-outlined text-white/70" aria-hidden="true">apartment</span>
+<label for="search-type" class="sr-only">Property type</label>
+<select id="search-type" name="type" class="bg-transparent border-none focus:ring-0 text-white w-full font-body-md appearance-none">
+<option class="text-primary">Commercial Space</option>
+<option class="text-primary">Luxury Residential</option>
+<option class="text-primary">Infrastructure</option>
+</select>
+</div>
+<button type="submit" class="magnetic-btn bg-secondary text-white px-8 py-3 font-button text-button hover:bg-secondary-container transition-colors shrink-0">SEARCH PROPERTIES</button>
+</div>
+</form>
+</section>
+<!-- Featured Projects -->
+<section class="py-20 md:py-section-gap space-y-24 md:space-y-section-gap overflow-hidden">
+<!-- Project 1 -->
+<div class="project-row max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid md:grid-cols-2 gap-gutter items-center" data-project>
+<div class="project-text space-y-6">
+<span class="font-label-caps text-label-caps text-secondary uppercase">Featured Commercial</span>
+<h2 class="font-headline-lg text-headline-lg tracking-tight">Metropolitan Tech Hub</h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">A sprawling campus of interconnected glass towers and sky bridges, defining the new silhouette of urban development. Integrating sustainable energy systems with high-density architectural planning.</p>
+<div class="pt-4">
+<a class="inline-flex items-center gap-2 font-button text-button text-primary hover:text-secondary transition-colors group" href="#portfolio">
+                        VIEW CASE STUDY <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="project-img-wrap aspect-video rounded-lg shadow-2xl">
+<img loading="lazy" alt="A futuristic bird's-eye view of a metropolitan tech hub with interconnected glass skyscrapers, green rooftop gardens and skywalks under bright daylight" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA71XmDdJ9ofGz041pC9KmcDwUSQ2r3gg-09YlgpX7a9Mdk6sjzbx9RzB88Z3ZNuj4bu4678TjB7eQSVwRatSJU_nmYNVbzQeFjrVpYWRdY4JeZinhw9304P1mO4lH50h5deiy6vaf7j_sZ4ggFwDxWa3Fq6thJGVt12_18sOiMjBt77SOFYyPyoenXFI6UEmUESlGG-Zo5Qw9b6wfEMXxn2biHubK_NwTY71nWr0szqNO6m7jvGtbRcQFAbzux9QpVJZtfN4jVN_2b"/>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="project-row from-right max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid md:grid-cols-2 gap-gutter items-center" data-project>
+<div class="project-img-wrap order-2 md:order-1 aspect-video rounded-lg shadow-2xl">
+<img loading="lazy" alt="A luxury modern residential villa at dusk with warm interior light visible through floor-to-ceiling glass walls, stone accents, cantilevered concrete levels, and an infinity pool" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhzqM_frR-f-S8lIkLEqo4cvOXY5RY74nloF6XQ4smUdS_2LzEwOMA42D_plh3ikU4Ljp0n_qgenvVCigdKEiAcmoJWGrgXXG9Nic6chmu-8PGXEszMh1UdHSyUpIvJfHwHMD6g8d7G355U94kVbjEeOF2Ougkx_rzsMMpCfGURrnp_7C1HWQgjenhvBdZtr9xU75ifBKjeuiSJU_dnX_3PcKGp-xIJFarDG1Ksi0x4s1I3cPirsZofgqAfp4nxBLQ5iZZlMzmgRXw"/>
+</div>
+<div class="project-text order-1 md:order-2 space-y-6 md:pl-12">
+<span class="font-label-caps text-label-caps text-secondary uppercase">Luxury Residential</span>
+<h2 class="font-headline-lg text-headline-lg tracking-tight">The Horizon Estate</h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Where nature meets modernism. This project utilizes raw stone textures and precision-engineered glass to create a living space that breathes with its environment while maintaining absolute privacy.</p>
+<div class="pt-4">
+<a class="inline-flex items-center gap-2 font-button text-button text-primary hover:text-secondary transition-colors group" href="#portfolio">
+                        EXPLORE RESIDENCES <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Project Grid (Bento) -->
+<section id="portfolio" class="py-20 md:py-section-gap bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-12 md:mb-16 portfolio-tile" data-portfolio>
+<h2 class="font-headline-lg text-headline-lg mb-4 tracking-tight">Global Portfolio</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Exceptional assets across six continents.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<article class="portfolio-tile group relative aspect-square overflow-hidden bg-primary" data-portfolio>
+<img loading="lazy" class="w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-40 transition-all duration-700" alt="Sky Point — a low-angle shot of a glass skyscraper in Frankfurt reflecting a clear blue sky, with geometric patterns and structural scale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCszJ2Gmun3-hU6LRkT5GIyDMxiPYwAyV5KtOOWP9esfv6KfbCNUnLgdxYssf6l26MBCrGaMzJ_44s9UsXnc43X004-y3kTdTF9cbk4DwWq7JtJwSy0BZdekHE9fCFsBQCU1SOO0x40eDimvgYXQM54n6Rdujaje_fd3IsTKnaCyY_ihKosvDNtr4LEUTMSMnnKH9rNB-cYk5Hfx8EdZYtB_ENNMYBfm6eMtZhPY8CIexa__YpPPpNal-eFCS-C5IQErADhbiMzuBiI"/>
+<div class="absolute inset-0 p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<h3 class="text-white font-headline-md text-headline-md">Sky Point</h3>
+<p class="text-white/70 font-label-caps text-label-caps opacity-0 group-hover:opacity-100 transition-opacity">FRANKFURT, GERMANY</p>
+</div>
+</article>
+<article class="portfolio-tile group relative aspect-square overflow-hidden bg-primary" data-portfolio style="transition-delay: 100ms;">
+<img loading="lazy" class="w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-40 transition-all duration-700" alt="Harbor Luxe — a modern waterfront villa in Dubai with expansive white surfaces and deep navy pool accents under bright clean sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMgeQ354PN6hT6cAQTNueC7pnQwp4KPfmSCmlFDln8iB1_WDk9eTWc5NbOpxEGgooIvsMcxaYdXg7bDn1azZzaVFFyb31fkupAI45TNI9yOni6hy04kXr1G9aD2JyWxgXEqbw-KknMOkJdgtesTc_fj40DSBVdOGJHIxOXXbOAoJLgeNNF8jzKfd4MeX6XZpnAUZYI-FFZUY9GgyAu_dTkiaifHcUnKe7uqtQTYnCbRM3TQCzAaqhGCr0OavF3inWNWcxz89QOQDM0"/>
+<div class="absolute inset-0 p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<h3 class="text-white font-headline-md text-headline-md">Harbor Luxe</h3>
+<p class="text-white/70 font-label-caps text-label-caps opacity-0 group-hover:opacity-100 transition-opacity">DUBAI, UAE</p>
+</div>
+</article>
+<article class="portfolio-tile group relative aspect-square overflow-hidden bg-primary" data-portfolio style="transition-delay: 200ms;">
+<img loading="lazy" class="w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-40 transition-all duration-700" alt="Vanguard HQ — a minimalist corporate lobby in Tokyo with marble floors, polished concrete walls and soft ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCZxXSdvf2nJnSdcxOZTGS3_iG4uDl9VE4TnUvQ4zhhPwxRfuLpk5Sscr4Xl9PodlinQ4EHQLhq-8wpYbWji8GeFlwBDC8CClqiwWhcUUHqzGa8fYVXnKWEQzCURYnDdwt7eUDQKaIrhMM2cVshPMLXVkEvKwHMBvBs1gY9PP3rhRD9XWdmbAahLotsAmUe9m-22zDOBuXJ_QqKTztgPpoWdjguppiXWIWJXb9rhoiZNC-QrvZupc4JQV3EU-q4f_gKyGMs0Hzd_yY"/>
+<div class="absolute inset-0 p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<h3 class="text-white font-headline-md text-headline-md">Vanguard HQ</h3>
+<p class="text-white/70 font-label-caps text-label-caps opacity-0 group-hover:opacity-100 transition-opacity">TOKYO, JAPAN</p>
+</div>
+</article>
+<article class="portfolio-tile group relative aspect-square overflow-hidden bg-primary" data-portfolio style="transition-delay: 300ms;">
+<img loading="lazy" class="w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-40 transition-all duration-700" alt="Eco Central — aerial view of a sustainable Singapore apartment complex with integrated greenery on balconies and energy-efficient facade in soft evening light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuO04TeJVbRKY9PYhQDrl9pm-ryUULURxcJQIjVOAuf7lvyL-84JbY3zgZ7c5sCVyA0-alnqa2J-gHlNxR_yhmm1xf9Kpn8Lyci_BDrlmDLtr2t534j-stiRS_eYLYcGr85tM8veg2M6LY6t4LG2HM7jnfxjoVZd8t5IE6jAadUZ0tnLASRgLIx5SM2VmzqAQgHWi6WmKFD1FvM1X89I_wP4sEkN-iX6UD5mOh-WEcXv-B5J44OT-GI5NaCg-caMOkBwJdbWtfpu0B"/>
+<div class="absolute inset-0 p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<h3 class="text-white font-headline-md text-headline-md">Eco Central</h3>
+<p class="text-white/70 font-label-caps text-label-caps opacity-0 group-hover:opacity-100 transition-opacity">SINGAPORE</p>
+</div>
+</article>
+<article class="portfolio-tile group relative aspect-square overflow-hidden bg-primary" data-portfolio style="transition-delay: 400ms;">
+<img loading="lazy" class="w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-40 transition-all duration-700" alt="The Monolith — a dramatic interior shot of a brutalist concrete structure in London with light beams piercing through architectural gaps" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy-Cp2d7ZKq3v3M5LOH2-5tBf4XxE1S9p7k41enxMSS7ILhFXOImLlGlsKnEauRSpBpQRSmOnXBu98IODKhxXn0ssCnA7mzX_-Lhw4_BIFye5Vvm9W5Vgz0zwuyj7-UpwaQoms_5U-vwjXPTcV2qmHc_1nHRDPjFnYk_BqvcjCL92FH6ZtPAWw7rQboDpEqimlKRKAeMBBOa0FkoiN0SAKTn-WdvtOcnF7A0ymhPdUT44yLIGWeLsehhgqDsSG-Bpt8tQBM_D1iNSX"/>
+<div class="absolute inset-0 p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<h3 class="text-white font-headline-md text-headline-md">The Monolith</h3>
+<p class="text-white/70 font-label-caps text-label-caps opacity-0 group-hover:opacity-100 transition-opacity">LONDON, UK</p>
+</div>
+</article>
+<article class="portfolio-tile group relative aspect-square overflow-hidden bg-primary" data-portfolio style="transition-delay: 500ms;">
+<img loading="lazy" class="w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-40 transition-all duration-700" alt="Arena 3.0 — a modern glass-clad stadium in New York with intricate steel supports and a vast transparent roof under an orange sunset sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQ8CRasZzyXjwgorC7W1oTUjFEduj9TD7za191eDAgJIsGcPYZNZePA5WLpWB0IixJCT47sHG7TdP4nAXQIRqViKEcTZ9Hw1_twDrjXW8PanncMZtX5Lrn6-HYMjh1hXQbLhIkqLVHDXJQ2Llgn9xsm02MNdNhE_Pf6daJvmxFZGfAlca17H047zRWQZ9VHfPHPHVsY1CQYbmutaD5_dOTHQey6Q-4hQ3P-O_Uk24m-0JtUPbS59Ng82Xi--iQs0jD_5PM2FvUs-8P"/>
+<div class="absolute inset-0 p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<h3 class="text-white font-headline-md text-headline-md">Arena 3.0</h3>
+<p class="text-white/70 font-label-caps text-label-caps opacity-0 group-hover:opacity-100 transition-opacity">NEW YORK, USA</p>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- Services Grid -->
+<section id="services" class="py-20 md:py-section-gap">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-12 md:mb-16 portfolio-tile" data-portfolio>
+<div class="max-w-xl">
+<span class="font-label-caps text-label-caps text-secondary uppercase mb-4 block">Our Expertise</span>
+<h2 class="font-headline-lg text-headline-lg tracking-tight">End-to-End Excellence</h2>
+</div>
+<a href="#services" class="border-b-2 border-primary pb-2 font-button text-button hover:text-secondary hover:border-secondary transition-all self-start md:self-end">ALL SERVICES</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<article class="service-card p-8 border border-outline-variant hover:bg-primary-container group transition-colors duration-500" data-service>
+<span class="service-icon material-symbols-outlined text-4xl text-secondary mb-6 group-hover:text-white transition-colors">analytics</span>
+<h3 class="font-headline-md text-[24px] mb-4 group-hover:text-white transition-colors">Strategic Advisory</h3>
+<p class="text-on-surface-variant group-hover:text-white/70 transition-colors">Market intelligence and feasibility studies for large-scale urban investments.</p>
+</article>
+<article class="service-card p-8 border border-outline-variant hover:bg-primary-container group transition-colors duration-500" data-service style="transition-delay: 120ms;">
+<span class="service-icon material-symbols-outlined text-4xl text-secondary mb-6 group-hover:text-white transition-colors">architecture</span>
+<h3 class="font-headline-md text-[24px] mb-4 group-hover:text-white transition-colors">Development</h3>
+<p class="text-on-surface-variant group-hover:text-white/70 transition-colors">Turnkey project management from conceptual design to final construction.</p>
+</article>
+<article class="service-card p-8 border border-outline-variant hover:bg-primary-container group transition-colors duration-500" data-service style="transition-delay: 240ms;">
+<span class="service-icon material-symbols-outlined text-4xl text-secondary mb-6 group-hover:text-white transition-colors">account_balance</span>
+<h3 class="font-headline-md text-[24px] mb-4 group-hover:text-white transition-colors">Investment</h3>
+<p class="text-on-surface-variant group-hover:text-white/70 transition-colors">Capital deployment strategies for sustainable institutional-grade real estate.</p>
+</article>
+<article class="service-card p-8 border border-outline-variant hover:bg-primary-container group transition-colors duration-500" data-service style="transition-delay: 360ms;">
+<span class="service-icon material-symbols-outlined text-4xl text-secondary mb-6 group-hover:text-white transition-colors">apartment</span>
+<h3 class="font-headline-md text-[24px] mb-4 group-hover:text-white transition-colors">Management</h3>
+<p class="text-on-surface-variant group-hover:text-white/70 transition-colors">Post-construction asset management ensuring long-term yield and durability.</p>
+</article>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="py-24 bg-primary text-white">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+<div class="stat-block" data-stat>
+<div class="stat-number text-[clamp(2.5rem,6vw,4rem)] font-bold text-secondary mb-2" data-count-to="450" data-count-suffix="+">0</div>
+<div class="font-label-caps uppercase tracking-widest text-white/60">Projects Completed</div>
+</div>
+<div class="stat-block" data-stat style="transition-delay: 120ms;">
+<div class="stat-number text-[clamp(2.5rem,6vw,4rem)] font-bold text-secondary mb-2" data-count-to="12" data-count-prefix="$" data-count-suffix="B">$0B</div>
+<div class="font-label-caps uppercase tracking-widest text-white/60">Assets Under Management</div>
+</div>
+<div class="stat-block" data-stat style="transition-delay: 240ms;">
+<div class="stat-number text-[clamp(2.5rem,6vw,4rem)] font-bold text-secondary mb-2" data-count-to="24">0</div>
+<div class="font-label-caps uppercase tracking-widest text-white/60">Global Office Hubs</div>
+</div>
+</div>
+</section>
+<!-- Strategic Alliances Section -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
+<div class="portfolio-tile mb-10 md:mb-12" data-portfolio>
+<h2 class="font-headline-lg text-headline-lg mb-4 tracking-tight">Strategic Alliances</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Cultivating a global network of excellence through high-impact collaborations with world-leading institutions and design partners.</p>
+</div>
+<div class="alliances-strip flex justify-center items-center transition-opacity duration-500 grayscale hover:grayscale-0" data-alliances>
+<img loading="lazy" alt="A row of logos from Archi-Corp's strategic institutional partners and design collaborators" class="max-w-4xl w-full h-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwlfSF_DZScvpNnyNL2OwkDt_2iqp3kOYjTBshw9-SlpNM-e6op1LxU0zc2bcka17klledDBWqSwqg-0211yVofReL8zTFxSrmDZxdm4HZ33fONgrK4e7MDnBDQr9sWEy9TpCj_8TgxSgrP47T5d5bO1RnMvr_DlchWq2PY2dqREoBStPBgJ_uC7R62SYzyau9rGN0SkoKjKmc_aRwzhm5a_NtDu_xQioI4mGdYsaoHH4JlAsrB7oE_UEKjnR2DyqFHQa4vj_CLTJE"/>
+</div>
+</div>
+</section>
+<!-- Timeline Section — Awwwards anchor: pinned scroll-scrub -->
+<section id="timeline" class="timeline-pin overflow-hidden">
+<div class="timeline-sticky py-24 md:py-0 w-full">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full">
+<div class="text-center mb-16 md:mb-24 portfolio-tile" data-portfolio>
+<span class="font-label-caps text-label-caps text-secondary uppercase mb-4 block">Our Journey</span>
+<h2 class="font-headline-lg text-headline-lg tracking-tight">Milestones of Excellence</h2>
+</div>
+<div class="relative" id="milestones">
+<!-- Vertical line (base + animated fill) -->
+<div class="absolute left-1/2 top-0 bottom-0 w-px bg-outline-variant -translate-x-1/2 hidden md:block"></div>
+<div class="timeline-line-fill"></div>
+<div class="space-y-20 md:space-y-32">
+<!-- 1994 -->
+<div class="milestone relative flex flex-col md:flex-row items-center" data-milestone>
+<div class="flex-1 md:text-right md:pr-12 hidden md:block">
+<h3 class="font-headline-md">Foundation</h3>
+<p class="text-on-surface-variant">Archi-Corp established in Zurich as a boutique design studio.</p>
+</div>
+<div class="milestone-dot w-12 h-12 bg-white border-2 border-secondary rounded-full flex items-center justify-center z-10 font-bold mb-8 md:mb-0 text-secondary">94</div>
+<div class="flex-1 md:pl-12 text-center md:text-left">
+<span class="md:hidden font-headline-md block mb-2">Foundation</span>
+<span class="milestone-year text-display-xl text-primary/5 hidden md:block font-bold pointer-events-none">1994</span>
+<p class="md:hidden text-on-surface-variant">Archi-Corp established in Zurich as a boutique design studio.</p>
+</div>
+</div>
+<!-- 2008 -->
+<div class="milestone relative flex flex-col md:flex-row items-center" data-milestone>
+<div class="flex-1 md:pr-12 text-center md:text-right order-2 md:order-1">
+<span class="milestone-year text-display-xl text-primary/5 hidden md:block font-bold pointer-events-none">2008</span>
+<span class="md:hidden font-headline-md block mb-2">Global Pivot</span>
+<p class="md:hidden text-on-surface-variant">Opening of London and New York hubs, pivoting to global commercial infrastructure.</p>
+</div>
+<div class="milestone-dot w-12 h-12 bg-white border-2 border-secondary rounded-full flex items-center justify-center z-10 font-bold mb-8 md:mb-0 order-1 md:order-2 text-secondary">08</div>
+<div class="flex-1 pl-12 hidden md:block order-3">
+<h3 class="font-headline-md">Global Pivot</h3>
+<p class="text-on-surface-variant">Opening of London and New York hubs, pivoting to global commercial infrastructure.</p>
+</div>
+</div>
+<!-- 2026 -->
+<div class="milestone relative flex flex-col md:flex-row items-center" data-milestone>
+<div class="flex-1 md:text-right md:pr-12 hidden md:block">
+<h3 class="font-headline-md">Smart Cities</h3>
+<p class="text-on-surface-variant">Pioneering AI-integrated urban planning and sustainable energy grids.</p>
+</div>
+<div class="milestone-dot w-12 h-12 bg-white border-2 border-secondary rounded-full flex items-center justify-center z-10 font-bold mb-8 md:mb-0 text-secondary">26</div>
+<div class="flex-1 md:pl-12 text-center md:text-left">
+<span class="md:hidden font-headline-md block mb-2">Smart Cities</span>
+<span class="milestone-year text-display-xl text-primary/5 hidden md:block font-bold pointer-events-none">2026</span>
+<p class="md:hidden text-on-surface-variant">Pioneering AI-integrated urban planning and sustainable energy grids.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Strategic Alliances Section (re-located block reference) -->
+
+<!-- Advisory & Intelligence Section -->
+<section id="advisory" class="py-20 md:py-section-gap overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid md:grid-cols-2 gap-gutter items-center">
+<div class="order-2 md:order-1">
+<img loading="lazy" alt="A close-up of architectural blueprints, hand sketches and a tablet showing financial models on a clean walnut desk, evoking strategic insight" class="advisory-img w-full rounded-lg shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSLDdapAuIDOjI1aYJJtcuybb9lyxXANXgtDWmehDus8qKTp8VERCsdGp66cv4VxwumUyVUH72qq7ZJ0YaQCwZNZ-u9W0JyvSsyeasJhOxImURfBVDPrblrwaEzYYvNHtqTgdvpVLzH_Xf7-QTtjXtXqGJuMHNNWdLuP4qokLZi-cyKKQqMUsYgaEnMbtVcYeYTdigv4ZTRYuXf2XVc1IjIIyarepuRMi1jZ5TZcNnG2LC3KjLvktylg1akFs-vQBbEv0bjgRLyVFb"/>
+</div>
+<div class="space-y-6 md:pl-12 order-1 md:order-2">
+<span class="font-label-caps text-label-caps text-secondary uppercase" data-advisory-text>Strategic Insight</span>
+<h2 class="font-headline-lg text-headline-lg tracking-tight" data-advisory-text>Advisory &amp; Intelligence</h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed" data-advisory-text>Archi-Corp serves as a cornerstone for institutional consulting, providing deep-market intelligence and feasibility analytics. We guide our partners through the complexities of global real estate cycles, ensuring visionary projects are backed by rigorous data and strategic foresight.</p>
+<div class="pt-4" data-advisory-text>
+<a class="inline-flex items-center gap-2 font-button text-button text-primary hover:text-secondary transition-colors group" href="#footer">
+                        CONSULT OUR EXPERTS <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Leadership Section -->
+<section class="py-20 md:py-section-gap bg-surface-container">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<h2 class="font-headline-lg text-headline-lg mb-12 md:mb-16 text-center tracking-tight portfolio-tile" data-portfolio>Visionary Leadership</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-gutter">
+<article class="leader space-y-4 group" data-leader>
+<div class="leader-photo aspect-[3/4] grayscale group-hover:grayscale-0 transition-all duration-700">
+<img loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="A professional portrait of Arthur Sterling, a senior executive in a tailored charcoal suit, in a brightly lit modern office with glass architectural models behind him" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1pkxFbBmnRiDVDKCL6YnWkywwvrIFSuZX773cAppp3BPpsKwAsIZHW4SpWBOhuX99jdbprRMqb2TBvtPN1b5TaW2HYUGSPCQt-ZFxORa7a5TxcndbNb9c711ShD3VDKTUI2tYr5ZUdWO6ZTgKbuBQcGgddwlHQwmOM0zxNrEdL6P4-sTH3OzZpWXKa0x3m7SZjcfdbGwRHX0ntgJDBxgjW6RTXpnSxZFOPPXjp4JYaD-CR5V0UdKJyXDC8zIMvIQwkrcUtuXr9xMx"/>
+</div>
+<div class="leader-meta">
+<h3 class="font-headline-md text-body-lg font-bold">Arthur Sterling</h3>
+<p class="text-secondary font-label-caps">CEO &amp; FOUNDING PARTNER</p>
+</div>
+</article>
+<article class="leader space-y-4 group" data-leader style="transition-delay: 120ms;">
+<div class="leader-photo aspect-[3/4] grayscale group-hover:grayscale-0 transition-all duration-700">
+<img loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="A professional portrait of Elena Vance, Chief Architect, with a confident expression in modern professional attire against a minimalist white gallery wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAdhrTo6Ka59ZRCvJX8T5Qv55irCyGqQpHDMUyKHjIE7u9npYmaYTh1FowOl6z0Q8d85bKCJU53UzqdUI2wKw-qzV_DzdL6y3eebwx8_RC2a9ySg3svpJX3LM8tHmVZMTmlEQY7xri1LybwUHY-woxIwzd8Lds6snK6dPcxnfo5XEPGSJA2srDZLnPvhx3RcftHYZ4NEI0L1nnsAn9dXlDPF4e4jWL61vgkrNfqkgS9IoGwzpwkwIx2THf2n0GNUKwuynqq4f6DQpR"/>
+</div>
+<div class="leader-meta">
+<h3 class="font-headline-md text-body-lg font-bold">Elena Vance</h3>
+<p class="text-secondary font-label-caps">CHIEF ARCHITECT</p>
+</div>
+</article>
+<article class="leader space-y-4 group" data-leader style="transition-delay: 240ms;">
+<div class="leader-photo aspect-[3/4] grayscale group-hover:grayscale-0 transition-all duration-700">
+<img loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="A close-up portrait of Marcus Thorne, Head of Investment, in casual-smart attire leaning against a large window overlooking a city skyline at dusk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAsGSQLRhBGsAndYZTK42wYE-fVJkEcamBtSbv2qdofLVMZ582Mqy7nZUfEZMBEo4pf279Ppdsjc70oX6Ypc9QIrupEZ2QUZ7pc3i3uYi9KdKh2hW_JKGNaXnqEctOI3qsFGanZ3-3OO21_smpkWgbe37IJLbru7MUzSWu2lWHiG3_I7y3-oiAf5dcTFLX5zGPBBfQzRmcp4bXUupp5mAgR2uaU2XOFLxP8ppSjFoAUNIsm_UX1TWy8b06XpQHqIa314tCZeijdSfT"/>
+</div>
+<div class="leader-meta">
+<h3 class="font-headline-md text-body-lg font-bold">Marcus Thorne</h3>
+<p class="text-secondary font-label-caps">HEAD OF INVESTMENT</p>
+</div>
+</article>
+<article class="leader space-y-4 group" data-leader style="transition-delay: 360ms;">
+<div class="leader-photo aspect-[3/4] grayscale group-hover:grayscale-0 transition-all duration-700">
+<img loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="A thoughtful portrait of Sarah Jenkins, Director of Innovation, in an architectural studio surrounded by blueprints and minimalist decor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1pGkI4HA5uyUEgvJPBfid4IgmeSC3a-16AkwoT1lRXjcqzvaobS6m86Bbt9tlofgwNdhaBgsLiwGJ2HTaSHDdoSNnQdBY9H7QFbQAyRavwIL3lwgpekykDEcghQ9Y3zIW3n-MQ9xthhF2N1t3nly2Ri8ISgwOnS5_hKHkfcc-uZbO8AgtfJ_OAi_Dr-q00IOzIsd5B1eL_vJztxSqGQBgz4bfSpYRyhnq5HEnl3Vm21ujKDu0P3tGm15kHVEa2OYkj4PQ6Vp9kO6S"/>
+</div>
+<div class="leader-meta">
+<h3 class="font-headline-md text-body-lg font-bold">Sarah Jenkins</h3>
+<p class="text-secondary font-label-caps">DIRECTOR OF INNOVATION</p>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- Sustainability Focus Section -->
+<section id="sustainability" class="relative min-h-[600px] flex items-center py-24 overflow-hidden" data-sustain>
+<div class="absolute inset-0 z-0">
+<img loading="lazy" alt="A wide shot of a green-clad sustainable mixed-use building with cascading rooftop gardens at golden hour, showcasing regenerative urban architecture" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjjz5wV3HsGSNqF6CE0DghsymR1qJE5_yEKqxB7en8XM5dHQwsHDe2n-IfGtXLCOOlnBIM4sdGohaevrwRyTCnknhrTw4nvcOdl_KdBg4Aea44sy_rEz_Epv-ma_5QvUY7st1C6XxupGIfpCh_g8WlwbLP8UXyuWycHNAAaixR_IGwPjcqwGReTq2u4FkgYrOs5iGXHF3pBUK5HDb3ND_6i6nqRZNWw642wWUOzapRueOdllpcHvoWsSeYlSLF57YfHd2aIG3F_PUk"/>
+<div class="absolute inset-0 bg-black/60"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full text-white">
+<div class="max-w-3xl mb-12 md:mb-16">
+<span class="font-label-caps text-label-caps text-secondary uppercase mb-4 block" data-sustain-eyebrow>Our Commitment</span>
+<h2 class="font-display-xl text-headline-lg md:text-display-xl mb-6 leading-tight tracking-tight">
+<span class="sustain-headline"><span>The Future is</span></span>
+<span class="sustain-headline"><span>Circular.</span></span>
+</h2>
+<p class="font-body-lg text-body-lg text-white/80 max-w-2xl" data-sustain-body>At Archi-Corp, we believe true architectural value is measured by its impact on the planet. We are pioneering net-zero development models that integrate regenerative technology with urban density.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+<div class="space-y-4" data-sustain-pillar>
+<span class="material-symbols-outlined text-secondary text-4xl">eco</span>
+<h3 class="font-headline-md text-[24px]">100% Renewable Energy</h3>
+<p class="text-white/60 font-body-md">Self-sustaining buildings that generate and store their own clean power through integrated photovoltaics.</p>
+</div>
+<div class="space-y-4" data-sustain-pillar>
+<span class="material-symbols-outlined text-secondary text-4xl">cycle</span>
+<h3 class="font-headline-md text-[24px]">Circular Policy</h3>
+<p class="text-white/60 font-body-md">Zero-waste construction lifecycles and modular design that prioritizes material reuse and recyclability.</p>
+</div>
+<div class="space-y-4" data-sustain-pillar>
+<span class="material-symbols-outlined text-secondary text-4xl">co2</span>
+<h3 class="font-headline-md text-[24px]">Carbon Neutral Portfolio</h3>
+<p class="text-white/60 font-body-md">A rigid commitment to neutralizing the operational carbon footprint of every asset within our management hub.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Journal Section -->
+<section id="journal" class="py-20 md:py-section-gap">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<h2 class="font-headline-lg text-headline-lg mb-12 md:mb-16 tracking-tight portfolio-tile" data-portfolio>The Journal</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<article class="journal-card from-left" data-journal>
+<div class="journal-img-wrap aspect-video mb-6">
+<img loading="lazy" class="journal-img w-full h-full object-cover" alt="Interior of a modern coworking space with industrial lighting, sleek wooden furniture and warm daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd7otaQNEyJMDJ06SqKvRuqvfr2izCpifsgngz7mKiKzahiCh_24urZC3KYqKz9UhyjKzQEspeiIGRereU_7YswEA2U-CvD8iZ91hle1Mn6EMAWRDs_7LNt9kBrp9wmdfNgNaADNKfAUNTq9B0C2rHEg0evBkuG6UO5RZCv7ml6JypVoG5nraWhqKi4CQtfbvf7XFvX43v7LWsH6cxgyAB7rC6JgM7CTEllbCDCudUzOdi4yy787LTLm2c_i6wWnXkav22RbjJR1vL"/>
+</div>
+<span class="font-label-caps text-secondary mb-2 block">MARCH 2026</span>
+<h3 class="font-headline-md text-[20px] mb-4 hover:text-secondary transition-colors cursor-pointer">The Evolution of Flexible Workspace Design</h3>
+<p class="text-on-surface-variant">How hybrid work is reshaping the core of commercial real estate infrastructure.</p>
+</article>
+<article class="journal-card from-top" data-journal style="transition-delay: 120ms;">
+<div class="journal-img-wrap aspect-video mb-6">
+<img loading="lazy" class="journal-img w-full h-full object-cover" alt="Solar panels on the roof of a modern glass building reflecting the clouds, illustrating sustainable urban energy solutions" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOevWjX4z0nQ5vkGSy2t8sOO5g8yeEiFWfYnF2Qtj4Xy7VEZUYftYb75BbJqvlRQsE7O7U7oKgwb5rDHOqj1FM5QYcMrPBHx-1d1KzHun8L0yPxLgMQedbf1EF0IhB6cNt_KSXqIT7q8GTbh7sqNUZe_Yskz3VN2u4pZe1cjhcT5NiMAdGsO_GRBsBch0ej3qH8K38-L9MeftkB5B-MI5ohZ9wUpDrKrvM-SDdXBTCIXAFB1tcmTXYCKvPEBChYtM6qna4lN2gsOfZ"/>
+</div>
+<span class="font-label-caps text-secondary mb-2 block">FEBRUARY 2026</span>
+<h3 class="font-headline-md text-[20px] mb-4 hover:text-secondary transition-colors cursor-pointer">Sustainability as a Primary Asset Driver</h3>
+<p class="text-on-surface-variant">ESG compliance is no longer optional — it's the foundation of long-term value creation.</p>
+</article>
+<article class="journal-card from-right" data-journal style="transition-delay: 240ms;">
+<div class="journal-img-wrap aspect-video mb-6">
+<img loading="lazy" class="journal-img w-full h-full object-cover" alt="A high-speed railway station integrated with a modern city, featuring futuristic glass and steel architecture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDogoHBd5bNfzuv9Zh1lonIBgBNE3kOkXNPt9Kn5vTeRi-xTMGdl_L13ATIi2l9pkeIWbguxyyUcgz641J0iG5nyRcF4CkY5ZthLV5AIpT-2eG1IFuKcsLIcEBfEAfJrGrxWZCrp3ravi_5WWH3OOl7xfBS593Pn4tG2kv6_YjpWa-6bbbyCBpkR3VhYFz5kstJ69TonYm8iuVltBBuiSVlyi-TKpumAn0fZ5-oozlJz_Pk6lBrwM7moBbpRVbVebESz7SEDykr-QrB"/>
+</div>
+<span class="font-label-caps text-secondary mb-2 block">JANUARY 2026</span>
+<h3 class="font-headline-md text-[20px] mb-4 hover:text-secondary transition-colors cursor-pointer">Transit-Oriented Urban Development</h3>
+<p class="text-on-surface-variant">Bridging the gap between transportation hubs and high-density living spaces.</p>
+</article>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer id="footer" class="bg-surface-container-lowest py-20 md:py-section-gap border-t border-outline-variant">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="footer-col space-y-6" data-footer-col>
+<div class="font-display-xl text-headline-md text-primary">ARCHI-CORP</div>
+<p class="text-on-surface-variant text-body-md">Excellence in Architecture &amp; Real Estate. Visionary solutions for global infrastructure challenges.</p>
+</div>
+<div class="footer-col" data-footer-col style="transition-delay: 100ms;">
+<h4 class="font-button text-button uppercase mb-8">Ecosystem</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#sustainability">Sustainability</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#advisory">Governance</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#portfolio">Infrastructure</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#portfolio">Smart Cities</a></li>
+</ul>
+</div>
+<div class="footer-col" data-footer-col style="transition-delay: 200ms;">
+<h4 class="font-button text-button uppercase mb-8">Contact</h4>
+<p class="text-on-surface-variant mb-4">Level 42, The Gherkin<br/>30 St Mary Axe, London</p>
+<p class="text-on-surface-variant">+44 20 7946 0123</p>
+<a href="mailto:inquiries@archi-corp.com" class="text-secondary font-semibold mt-4 underline inline-block hover:opacity-80 transition-opacity">inquiries@archi-corp.com</a>
+</div>
+<div class="footer-col" data-footer-col style="transition-delay: 300ms;">
+<h4 class="font-button text-button uppercase mb-8">Follow</h4>
+<div class="flex gap-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center border border-outline-variant hover:bg-primary hover:text-white transition-all" aria-label="LinkedIn">LI</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center border border-outline-variant hover:bg-primary hover:text-white transition-all" aria-label="Instagram">IG</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center border border-outline-variant hover:bg-primary hover:text-white transition-all" aria-label="Twitter">TW</a>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-20 md:mt-24 pt-8 border-t border-outline-variant flex flex-col md:flex-row justify-between gap-4 text-label-caps text-on-surface-variant">
+<p>© 2026 Archi-Corp International. Excellence in Architecture &amp; Real Estate.</p>
+<div class="flex gap-6 md:gap-8">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+<script>
+    (() => {
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const isTouch = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+
+        // ---------- Nav: ARCHI-CORP letter stagger ----------
+        const logo = document.getElementById('nav-logo');
+        if (logo) {
+            const text = 'ARCHI-CORP';
+            logo.innerHTML = '';
+            [...text].forEach((ch, i) => {
+                const s = document.createElement('span');
+                s.className = 'nav-letter';
+                s.textContent = ch === '-' ? '‑' : ch;
+                s.style.animationDelay = (0.05 * i + 0.1) + 's';
+                logo.appendChild(s);
+            });
+        }
+
+        // ---------- Nav: scroll-glass swap ----------
+        const nav = document.getElementById('main-nav');
+        const onNavScroll = () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-white/95', 'shadow-md');
+                nav.classList.remove('bg-white/10');
+            } else {
+                nav.classList.remove('bg-white/95', 'shadow-md');
+                nav.classList.add('bg-white/10');
+            }
+        };
+        window.addEventListener('scroll', onNavScroll, { passive: true });
+        onNavScroll();
+
+        // ---------- Mobile menu ----------
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const setMenu = (open) => {
+            mobileMenu.classList.toggle('open', open);
+            mobileMenu.setAttribute('aria-hidden', String(!open));
+            menuBtn.setAttribute('aria-expanded', String(open));
+            menuBtn.textContent = open ? 'close' : 'menu';
+            document.body.style.overflow = open ? 'hidden' : '';
+        };
+        menuBtn?.addEventListener('click', () => setMenu(!mobileMenu.classList.contains('open')));
+        mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+
+        // ---------- IO factory ----------
+        const observe = (selector, cb, opts = {}) => {
+            const io = new IntersectionObserver((entries, obs) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        cb(e.target);
+                        obs.unobserve(e.target);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px', ...opts });
+            document.querySelectorAll(selector).forEach(el => io.observe(el));
+        };
+
+        observe('[data-project]', el => el.classList.add('in'));
+        observe('[data-portfolio]', el => el.classList.add('in'));
+        observe('[data-service]', el => el.classList.add('in'));
+        observe('[data-alliances]', el => el.classList.add('in'));
+        observe('.advisory-img', el => el.classList.add('in'));
+        observe('[data-advisory-text]', el => el.classList.add('in'));
+        observe('[data-leader]', el => el.classList.add('in'));
+        observe('[data-sustain]', el => el.classList.add('in'));
+        observe('[data-journal]', el => el.classList.add('in'));
+        observe('[data-footer-col]', el => el.classList.add('in'));
+
+        // ---------- Stats count-up (rAF, eased) ----------
+        const animateCount = (el) => {
+            const target = parseFloat(el.dataset.countTo);
+            const decimals = parseInt(el.dataset.countDecimals || '0', 10);
+            const prefix = el.dataset.countPrefix || '';
+            const suffix = el.dataset.countSuffix || '';
+            const duration = 1700;
+            const start = performance.now();
+            const ease = (t) => 1 - Math.pow(1 - t, 3);
+            const tick = (now) => {
+                const t = Math.min(1, (now - start) / duration);
+                const v = target * ease(t);
+                el.textContent = prefix + (decimals ? v.toFixed(decimals) : Math.round(v).toLocaleString()) + suffix;
+                if (t < 1) requestAnimationFrame(tick);
+            };
+            requestAnimationFrame(tick);
+        };
+        observe('[data-stat]', block => {
+            block.classList.add('in');
+            const num = block.querySelector('[data-count-to]');
+            if (!num) return;
+            if (reduceMotion) {
+                const dec = parseInt(num.dataset.countDecimals || '0', 10);
+                num.textContent = (num.dataset.countPrefix || '') +
+                    parseFloat(num.dataset.countTo).toFixed(dec) +
+                    (num.dataset.countSuffix || '');
+            } else {
+                animateCount(num);
+            }
+        });
+
+        // ---------- Smooth anchor scroll fallback ----------
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', (e) => {
+                const id = a.getAttribute('href');
+                if (id.length <= 1) return;
+                const target = document.querySelector(id);
+                if (!target) return;
+                e.preventDefault();
+                target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+            });
+        });
+
+        // ---------- Custom cursor + magnetic buttons ----------
+        if (!reduceMotion && !isTouch) {
+            const dot = document.querySelector('.cursor-dot');
+            const ring = document.querySelector('.cursor-ring');
+            if (dot && ring) {
+                let dotX = innerWidth / 2, dotY = innerHeight / 2;
+                let ringX = dotX, ringY = dotY;
+                let targetX = dotX, targetY = dotY;
+                const lerp = (a, b, n) => a + (b - a) * n;
+                addEventListener('pointermove', (e) => { targetX = e.clientX; targetY = e.clientY; }, { passive: true });
+                const tick = () => {
+                    dotX = lerp(dotX, targetX, 0.55);
+                    dotY = lerp(dotY, targetY, 0.55);
+                    ringX = lerp(ringX, targetX, 0.18);
+                    ringY = lerp(ringY, targetY, 0.18);
+                    dot.style.transform = `translate(${dotX}px, ${dotY}px) translate(-50%,-50%)`;
+                    ring.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%,-50%)`;
+                    requestAnimationFrame(tick);
+                };
+                tick();
+                const interactive = 'a, button, [data-portfolio], [data-leader], [data-journal]';
+                document.querySelectorAll(interactive).forEach(el => {
+                    el.addEventListener('pointerenter', () => {
+                        document.body.classList.add('cursor-hover');
+                        if (el.matches('[data-portfolio]') && el.tagName === 'ARTICLE') {
+                            document.body.classList.add('cursor-label'); ring.textContent = 'VIEW';
+                        }
+                    });
+                    el.addEventListener('pointerleave', () => {
+                        document.body.classList.remove('cursor-hover', 'cursor-label');
+                        ring.textContent = '';
+                    });
+                });
+            }
+            document.querySelectorAll('.magnetic-btn').forEach(btn => {
+                const strength = 0.18;
+                btn.addEventListener('pointermove', (e) => {
+                    const r = btn.getBoundingClientRect();
+                    const x = e.clientX - (r.left + r.width / 2);
+                    const y = e.clientY - (r.top + r.height / 2);
+                    btn.style.transform = `translate(${x * strength}px, ${y * strength}px)`;
+                });
+                btn.addEventListener('pointerleave', () => { btn.style.transform = ''; });
+            });
+        }
+
+        // ---------- Lenis smooth scroll + pinned timeline (Awwwards anchor) ----------
+        if (!reduceMotion) {
+            const waitForLibs = (cb) => {
+                if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined' && typeof Lenis !== 'undefined') return cb();
+                setTimeout(() => waitForLibs(cb), 40);
+            };
+            waitForLibs(() => {
+                gsap.registerPlugin(ScrollTrigger);
+                const lenis = new Lenis({
+                    duration: 1.2,
+                    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                    smoothWheel: true
+                });
+                lenis.on('scroll', ScrollTrigger.update);
+                gsap.ticker.add((time) => lenis.raf(time * 1000));
+                gsap.ticker.lagSmoothing(0);
+
+                // Timeline pinned scroll-scrub (desktop only — pin distance + sequential markers)
+                const isDesktop = window.matchMedia('(min-width: 768px)').matches;
+                const milestones = gsap.utils.toArray('[data-milestone]');
+                const lineFill = document.querySelector('.timeline-line-fill');
+                if (isDesktop && milestones.length && lineFill) {
+                    ScrollTrigger.create({
+                        trigger: '.timeline-pin',
+                        start: 'top top',
+                        // Use 'bottom bottom' so the scrub range = the sticky range
+                        // (wrapper height minus 1 viewport). Otherwise the last marker
+                        // activates after the section has scrolled past, leaving a
+                        // dead stretch of "white space" before the next section.
+                        end: 'bottom bottom',
+                        scrub: 0.6,
+                        invalidateOnRefresh: true,
+                        onUpdate: (self) => {
+                            const p = self.progress;
+                            lineFill.style.height = (p * 100) + '%';
+                            const idx = Math.min(milestones.length - 1, Math.floor(p * milestones.length));
+                            milestones.forEach((m, i) => m.classList.toggle('active', i <= idx));
+                        }
+                    });
+                } else {
+                    // Mobile/tablet: just activate all milestones on view
+                    milestones.forEach(m => m.classList.add('active'));
+                }
+            });
+        } else {
+            // Reduced motion: show everything at final state
+            document.querySelectorAll('[data-milestone]').forEach(m => m.classList.add('active'));
+        }
+    })();
+    </script>
+</body></html>
