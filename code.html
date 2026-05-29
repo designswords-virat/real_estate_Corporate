@@ -249,6 +249,32 @@
         /* ============================================================
            SECTION 4 · PORTFOLIO BENTO — tile fade-rise with stagger
            ============================================================ */
+        /* ============================================================
+           OUR JOURNEY — vertical scroll-progress line (Lenis-driven)
+           Line height tracks scroll position in real time. Each item dims to 40%
+           until its dot midpoint crosses the trigger line (55% of viewport).
+           Reference: journey-sections/04-scroll-progress-line.html
+           ============================================================ */
+        .journey-line-fill {
+            height: 0;
+            transition: height 0.08s linear;
+        }
+        .journey-item {
+            transition: opacity 0.5s, filter 0.5s;
+        }
+        .journey-item:not(.passed) {
+            opacity: 0.4;
+            filter: saturate(0.4);
+        }
+        .journey-item.passed .journey-dot {
+            background: #0058bd;
+            border-color: #0058bd;
+            box-shadow: 0 0 0 8px rgba(0, 88, 189, 0.15);
+        }
+        .journey-item.passed .journey-when {
+            color: #0058bd;
+        }
+
         /* One-shot CSS reveal so portfolio tiles + the timeline 'Milestones of Excellence'
            headline are guaranteed visible even if the IntersectionObserver never fires
            (script error, timing, captured mid-fade). .in still wins if IO fires faster. */
@@ -316,20 +342,35 @@
         @media (min-width: 768px) {
             .timeline-pin {
                 position: relative;
-                /* Sticky display (100vh) + 120vh of scrub band. The 120vh is what drives the
-                   .timeline-line-fill height: 0 → 100% as you scroll, so the blue progression
-                   line draws smoothly from the top milestone to the bottom milestone instead
-                   of snapping in 20vh. */
-                min-height: 220vh;
+                /* Section is exactly one viewport tall — no scrub band, no sticky overflow,
+                   no trailing dead space. Line + markers animate via IO + CSS keyframes when
+                   the section enters view (handled below), not via scroll-scrub. */
+                height: 100vh;
             }
             .timeline-sticky {
-                position: sticky; top: 0;
                 height: 100vh;
-                /* Align content to the top of the sticky inner (not centered) so the headline
-                   sits flush with a known position and the milestones don't float in dead
-                   centered space above/below. */
-                display: flex; align-items: flex-start;
-                padding-block: 5rem;
+                display: flex; align-items: center;
+            }
+            /* When the section becomes visible (IO toggles .in on #milestones), draw the
+               progression line from top to bottom over 2.4s, then activate each marker. */
+            #milestones.in .timeline-line-fill {
+                animation: timeline-line-draw 2.4s cubic-bezier(0.22,1,0.36,1) 0.2s forwards;
+            }
+            @keyframes timeline-line-draw {
+                from { height: 0; }
+                to { height: 100%; }
+            }
+            #milestones.in [data-milestone]:nth-child(1) { animation: milestone-activate 0.7s cubic-bezier(0.22,1,0.36,1) 0.4s forwards; }
+            #milestones.in [data-milestone]:nth-child(2) { animation: milestone-activate 0.7s cubic-bezier(0.22,1,0.36,1) 1.2s forwards; }
+            #milestones.in [data-milestone]:nth-child(3) { animation: milestone-activate 0.7s cubic-bezier(0.22,1,0.36,1) 2.0s forwards; }
+            @keyframes milestone-activate {
+                to { opacity: 1; transform: translateY(0); }
+            }
+            #milestones.in [data-milestone]:nth-child(1) .milestone-dot { animation: milestone-dot-fill 0.5s cubic-bezier(0.34,1.56,0.64,1) 0.6s forwards; }
+            #milestones.in [data-milestone]:nth-child(2) .milestone-dot { animation: milestone-dot-fill 0.5s cubic-bezier(0.34,1.56,0.64,1) 1.4s forwards; }
+            #milestones.in [data-milestone]:nth-child(3) .milestone-dot { animation: milestone-dot-fill 0.5s cubic-bezier(0.34,1.56,0.64,1) 2.2s forwards; }
+            @keyframes milestone-dot-fill {
+                to { background: #0058bd; color: #fff; border-color: #0058bd; transform: scale(1.1); }
             }
             .timeline-line-fill {
                 position: absolute; left: 50%; top: 0;
@@ -342,10 +383,18 @@
         }
         .timeline-line-fill { display: none; }
         @media (min-width: 768px) { .timeline-line-fill { display: block; } }
+        /* Mobile default: fully visible. Desktop overrides this to start dimmed and
+           the keyframe chain (inside @media min-width:768px) reveals them progressively. */
         .milestone {
-            transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22,1,0.36,1);
-            opacity: 0.25;
-            transform: translateY(20px);
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media (min-width: 768px) {
+            .milestone {
+                transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22,1,0.36,1);
+                opacity: 0.25;
+                transform: translateY(20px);
+            }
         }
         .milestone.active {
             opacity: 1;
@@ -715,65 +764,37 @@
 </div>
 </div>
 </section>
-<!-- Timeline Section — Awwwards anchor: pinned scroll-scrub -->
-<section id="timeline" class="timeline-pin overflow-hidden">
-<div class="timeline-sticky py-24 md:py-0 w-full">
-<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full">
-<div class="text-center mb-16 md:mb-24 portfolio-tile" data-portfolio>
+<!-- Our Journey — vertical scroll-progress line (Lenis-driven, real-time tracking) -->
+<section id="journey" class="py-20 md:py-section-gap bg-background overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-12 md:mb-16">
 <span class="font-label-caps text-label-caps text-secondary uppercase mb-4 block">Our Journey</span>
-<h2 class="font-headline-lg text-headline-lg tracking-tight">Milestones of Excellence</h2>
+<h2 class="font-headline-lg text-headline-lg tracking-tight">Three decades, one trajectory.</h2>
 </div>
-<div class="relative" id="milestones">
-<!-- Vertical line (base + animated fill) -->
-<div class="absolute left-1/2 top-0 bottom-0 w-px bg-outline-variant -translate-x-1/2 hidden md:block"></div>
-<div class="timeline-line-fill"></div>
-<div class="space-y-20 md:space-y-32">
-<!-- 1994 -->
-<div class="milestone relative flex flex-col md:flex-row items-center" data-milestone>
-<div class="flex-1 md:text-right md:pr-12 hidden md:block">
-<h3 class="font-headline-md">Foundation</h3>
-<p class="text-on-surface-variant">Archi-Corp established in Zurich as a boutique design studio.</p>
+<div class="journey-timeline relative max-w-2xl mx-auto pl-16" id="journey-timeline">
+<div class="journey-line-track absolute left-6 top-2 bottom-2 w-0.5 bg-outline-variant"></div>
+<div class="journey-line-fill absolute left-6 top-2 w-0.5 bg-secondary" id="journey-line-fill" style="height:0; box-shadow: 0 0 14px rgba(0,88,189,0.5);"></div>
+<div class="journey-item relative py-5 pb-16">
+<div class="journey-dot absolute -left-12 top-6 w-6 h-6 rounded-full bg-background border-[3px] border-outline-variant transition-all duration-500"></div>
+<div class="journey-when font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant transition-colors duration-500">Step 01 · 1994</div>
+<h3 class="font-headline-md text-headline-md mt-2 tracking-tight">Foundation in Zurich</h3>
+<p class="font-body-md text-on-surface-variant mt-2 max-w-prose">Archi-Corp opens its doors as a boutique design studio, set against the precision culture of central European architecture.</p>
 </div>
-<div class="milestone-dot w-12 h-12 bg-white border-2 border-secondary rounded-full flex items-center justify-center z-10 font-bold mb-8 md:mb-0 text-secondary">94</div>
-<div class="flex-1 md:pl-12 text-center md:text-left">
-<span class="md:hidden font-headline-md block mb-2">Foundation</span>
-<span class="milestone-year text-display-xl text-primary/5 hidden md:block font-bold pointer-events-none">1994</span>
-<p class="md:hidden text-on-surface-variant">Archi-Corp established in Zurich as a boutique design studio.</p>
+<div class="journey-item relative py-5 pb-16">
+<div class="journey-dot absolute -left-12 top-6 w-6 h-6 rounded-full bg-background border-[3px] border-outline-variant transition-all duration-500"></div>
+<div class="journey-when font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant transition-colors duration-500">Step 02 · 2008</div>
+<h3 class="font-headline-md text-headline-md mt-2 tracking-tight">Global pivot</h3>
+<p class="font-body-md text-on-surface-variant mt-2 max-w-prose">London and New York hubs open. Practice expands from boutique studio to a transcontinental commercial-infrastructure firm.</p>
 </div>
-</div>
-<!-- 2008 -->
-<div class="milestone relative flex flex-col md:flex-row items-center" data-milestone>
-<div class="flex-1 md:pr-12 text-center md:text-right order-2 md:order-1">
-<span class="milestone-year text-display-xl text-primary/5 hidden md:block font-bold pointer-events-none">2008</span>
-<span class="md:hidden font-headline-md block mb-2">Global Pivot</span>
-<p class="md:hidden text-on-surface-variant">Opening of London and New York hubs, pivoting to global commercial infrastructure.</p>
-</div>
-<div class="milestone-dot w-12 h-12 bg-white border-2 border-secondary rounded-full flex items-center justify-center z-10 font-bold mb-8 md:mb-0 order-1 md:order-2 text-secondary">08</div>
-<div class="flex-1 pl-12 hidden md:block order-3">
-<h3 class="font-headline-md">Global Pivot</h3>
-<p class="text-on-surface-variant">Opening of London and New York hubs, pivoting to global commercial infrastructure.</p>
-</div>
-</div>
-<!-- 2026 -->
-<div class="milestone relative flex flex-col md:flex-row items-center" data-milestone>
-<div class="flex-1 md:text-right md:pr-12 hidden md:block">
-<h3 class="font-headline-md">Smart Cities</h3>
-<p class="text-on-surface-variant">Pioneering AI-integrated urban planning and sustainable energy grids.</p>
-</div>
-<div class="milestone-dot w-12 h-12 bg-white border-2 border-secondary rounded-full flex items-center justify-center z-10 font-bold mb-8 md:mb-0 text-secondary">26</div>
-<div class="flex-1 md:pl-12 text-center md:text-left">
-<span class="md:hidden font-headline-md block mb-2">Smart Cities</span>
-<span class="milestone-year text-display-xl text-primary/5 hidden md:block font-bold pointer-events-none">2026</span>
-<p class="md:hidden text-on-surface-variant">Pioneering AI-integrated urban planning and sustainable energy grids.</p>
-</div>
-</div>
-</div>
+<div class="journey-item relative py-5 pb-16">
+<div class="journey-dot absolute -left-12 top-6 w-6 h-6 rounded-full bg-background border-[3px] border-outline-variant transition-all duration-500"></div>
+<div class="journey-when font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant transition-colors duration-500">Step 03 · 2026</div>
+<h3 class="font-headline-md text-headline-md mt-2 tracking-tight">Smart Cities horizon</h3>
+<p class="font-body-md text-on-surface-variant mt-2 max-w-prose">Pioneering AI-integrated urban planning and sustainable energy grids — architecture as living, responsive systems.</p>
 </div>
 </div>
 </div>
 </section>
-<!-- Strategic Alliances Section (re-located block reference) -->
-
 <!-- Advisory & Intelligence Section -->
 <section id="advisory" class="py-20 md:py-section-gap overflow-hidden">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid md:grid-cols-2 gap-gutter items-center">
@@ -1117,31 +1138,32 @@
                 gsap.ticker.add((time) => lenis.raf(time * 1000));
                 gsap.ticker.lagSmoothing(0);
 
-                // Timeline pinned scroll-scrub (desktop only — pin distance + sequential markers)
-                const isDesktop = window.matchMedia('(min-width: 768px)').matches;
-                const milestones = gsap.utils.toArray('[data-milestone]');
-                const lineFill = document.querySelector('.timeline-line-fill');
-                if (isDesktop && milestones.length && lineFill) {
-                    ScrollTrigger.create({
-                        trigger: '.timeline-pin',
-                        start: 'top top',
-                        // Use 'bottom bottom' so the scrub range = the sticky range
-                        // (wrapper height minus 1 viewport). Otherwise the last marker
-                        // activates after the section has scrolled past, leaving a
-                        // dead stretch of "white space" before the next section.
-                        end: 'bottom bottom',
-                        scrub: 0.6,
-                        invalidateOnRefresh: true,
-                        onUpdate: (self) => {
-                            const p = self.progress;
-                            lineFill.style.height = (p * 100) + '%';
-                            const idx = Math.min(milestones.length - 1, Math.floor(p * milestones.length));
-                            milestones.forEach((m, i) => m.classList.toggle('active', i <= idx));
-                        }
-                    });
-                } else {
-                    // Mobile/tablet: just activate all milestones on view
-                    milestones.forEach(m => m.classList.add('active'));
+                // Our Journey: vertical scroll-progress line (Lenis-driven, real-time tracking).
+                // Line fills from 0 → its track height as the user scrolls; each item's dot lights
+                // up the moment its midpoint crosses the trigger line (55% of viewport).
+                // Reference: web sections demo / journey-sections/04-scroll-progress-line.html
+                const journeyTimeline = document.getElementById('journey-timeline');
+                const journeyLineFill = document.getElementById('journey-line-fill');
+                if (journeyTimeline && journeyLineFill) {
+                    const journeyItems = [...journeyTimeline.querySelectorAll('.journey-item')];
+                    const updateJourney = () => {
+                        const r = journeyTimeline.getBoundingClientRect();
+                        const vh = window.innerHeight;
+                        const trackTop = r.top + 8;
+                        const trackBot = r.bottom - 8;
+                        const trigger = vh * 0.55;
+                        const fillH = Math.max(0, Math.min(trackBot - trackTop, trigger - trackTop));
+                        journeyLineFill.style.height = fillH + 'px';
+                        journeyItems.forEach(it => {
+                            const dot = it.querySelector('.journey-dot');
+                            const dr = dot.getBoundingClientRect();
+                            const dotMid = dr.top + dr.height / 2;
+                            it.classList.toggle('passed', dotMid < trigger);
+                        });
+                    };
+                    lenis.on('scroll', updateJourney);
+                    window.addEventListener('resize', updateJourney);
+                    updateJourney();
                 }
             });
         } else {
