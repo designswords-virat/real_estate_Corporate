@@ -249,9 +249,15 @@
         /* ============================================================
            SECTION 4 · PORTFOLIO BENTO — tile fade-rise with stagger
            ============================================================ */
+        /* One-shot CSS reveal so portfolio tiles + the timeline 'Milestones of Excellence'
+           headline are guaranteed visible even if the IntersectionObserver never fires
+           (script error, timing, captured mid-fade). .in still wins if IO fires faster. */
         .portfolio-tile {
             opacity: 0; transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1);
+            animation: portfolio-tile-rise 0.9s cubic-bezier(0.22,1,0.36,1) 0.4s forwards;
+        }
+        @keyframes portfolio-tile-rise {
+            to { opacity: 1; transform: translateY(0); }
         }
         .portfolio-tile.in { opacity: 1; transform: translateY(0); }
 
@@ -310,15 +316,20 @@
         @media (min-width: 768px) {
             .timeline-pin {
                 position: relative;
-                /* Sticky display (100vh) + a short scrub band (20vh). Larger values leave a
-                   blank wrap area after the sticky releases, since centered milestone content
-                   doesn't fill the inner. */
-                min-height: 120vh;
+                /* Sticky display (100vh) + 120vh of scrub band. The 120vh is what drives the
+                   .timeline-line-fill height: 0 → 100% as you scroll, so the blue progression
+                   line draws smoothly from the top milestone to the bottom milestone instead
+                   of snapping in 20vh. */
+                min-height: 220vh;
             }
             .timeline-sticky {
                 position: sticky; top: 0;
                 height: 100vh;
-                display: flex; align-items: center;
+                /* Align content to the top of the sticky inner (not centered) so the headline
+                   sits flush with a known position and the milestones don't float in dead
+                   centered space above/below. */
+                display: flex; align-items: flex-start;
+                padding-block: 5rem;
             }
             .timeline-line-fill {
                 position: absolute; left: 50%; top: 0;
